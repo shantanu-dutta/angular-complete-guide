@@ -1,6 +1,10 @@
 {
   "name": "my-first-app",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nlern/angular-complete-guide"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
