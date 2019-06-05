@@ -5,6 +5,10 @@
     "type": "git",
     "url": "git://github.com/nlern/angular-complete-guide"
   },
+  "description": "angular app used while following angular ultimate guide course",
+  "author": {
+    "name": "Shantanu Dutta"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
