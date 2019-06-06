@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-one.component.css']
 })
 export class TestOneComponent implements OnInit {
+  showSecret = false;
+  log = [];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onToggleDetails() {
+    this.showSecret = !this.showSecret;
+    this.log.push(new Date());
   }
-
 }
