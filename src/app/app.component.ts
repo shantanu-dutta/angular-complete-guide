@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { trigger, state, style } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 export enum DivAnimationStates {
   Normal = 'normal',
@@ -24,6 +30,14 @@ export enum DivAnimationStates {
           'background-color': 'blue',
           transform: 'translateX(100px)'
         })
+      ),
+      transition(
+        `${DivAnimationStates.Normal} => ${DivAnimationStates.Highlighted}`,
+        animate(300)
+      ),
+      transition(
+        `${DivAnimationStates.Highlighted} => ${DivAnimationStates.Normal}`,
+        animate(800)
       )
     ])
   ]
@@ -31,6 +45,17 @@ export enum DivAnimationStates {
 export class AppComponent {
   state = DivAnimationStates.Normal;
   list = ['Milk', 'Sugar', 'Bread'];
+
+  onAnimate() {
+    this.state =
+      this.state === DivAnimationStates.Normal
+        ? DivAnimationStates.Highlighted
+        : DivAnimationStates.Normal;
+  }
+
+  onShrink() {
+    this.state = DivAnimationStates.Normal;
+  }
 
   onAdd(item) {
     this.list.push(item);
