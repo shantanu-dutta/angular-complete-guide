@@ -9,7 +9,7 @@ import {
 
 export enum DivAnimationStates {
   Normal = 'normal',
-  Highlighted = 'highlighted'
+  Highlighted = 'highlighted',
 }
 
 @Component({
@@ -32,12 +32,8 @@ export enum DivAnimationStates {
         })
       ),
       transition(
-        `${DivAnimationStates.Normal} => ${DivAnimationStates.Highlighted}`,
+        `${DivAnimationStates.Normal} <=> ${DivAnimationStates.Highlighted}`,
         animate(300)
-      ),
-      transition(
-        `${DivAnimationStates.Highlighted} => ${DivAnimationStates.Normal}`,
-        animate(800)
       )
     ])
   ]
